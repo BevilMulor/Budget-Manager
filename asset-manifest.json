@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Personal-Budget-Manager/static/css/main.2d9ba612.css",
-    "main.js": "/Personal-Budget-Manager/static/js/main.db798e31.js",
+    "main.css": "/Personal-Budget-Manager/static/css/main.cda59e4e.css",
+    "main.js": "/Personal-Budget-Manager/static/js/main.66920e8a.js",
     "static/js/453.e4f83acf.chunk.js": "/Personal-Budget-Manager/static/js/453.e4f83acf.chunk.js",
     "index.html": "/Personal-Budget-Manager/index.html",
-    "main.2d9ba612.css.map": "/Personal-Budget-Manager/static/css/main.2d9ba612.css.map",
-    "main.db798e31.js.map": "/Personal-Budget-Manager/static/js/main.db798e31.js.map",
+    "main.cda59e4e.css.map": "/Personal-Budget-Manager/static/css/main.cda59e4e.css.map",
+    "main.66920e8a.js.map": "/Personal-Budget-Manager/static/js/main.66920e8a.js.map",
     "453.e4f83acf.chunk.js.map": "/Personal-Budget-Manager/static/js/453.e4f83acf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d9ba612.css",
-    "static/js/main.db798e31.js"
+    "static/css/main.cda59e4e.css",
+    "static/js/main.66920e8a.js"
   ]
 }
