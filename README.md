@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+Personal Budget Manager
+This is a React-based web application for managing personal budgets, expenses, and viewing financial data visually using charts.
+Project Overview
+The Personal Budget Manager helps users keep track of their expenses by setting budgets, tracking spending by categories, and generating charts for easy visualization.
+Features
+Add and categorize expenses.
+Set budget limits for categories (Food, Entertainment, Utilities, and others.).
+Visualize spending with pie charts.
+Alerts for approaching budget limits.
+Persistent state using Redux and Redux Persist.
+Live Demo
+Check out the live demo here
+Technologies Used
+React: For building the user interface.
+Redux: For state management.
+Redux Persist: To persist the Redux store across sessions.
+Chart.js: For visualizing data.
+React Chart.js 2: Wrapper for Chart.js in React.
+Installation
+To run this project locally, follow these steps:
+Clone the repository:
+git clone https://github.com/BevilMulor/Personal-Budget-Manager.git
+cd Personal-Budget-Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install dependencies: 
+This project uses Yarn as a package manager. Run the following command to install the required packages:
+yarn install
 
-## Available Scripts
+Start the development server:
+yarn start
+This will start the application locally on http://localhost:3000.
+Available Scripts
+In the project directory, you can run the following scripts:
+yarn start: Starts the development server.
+yarn build: Builds the app for production.
+yarn test: Runs the tests.
+yarn eject: Ejects the configuration (for advanced users).
+yarn deploy: Deploys the app to GitHub Pages.
+Deployment
+To deploy the project on GitHub Pages, follow these steps:
+1. Ensure you have set the homepage field in package.json to https://BevilMulor.github.io/Personal-Budget-Manager.
+Run the following command to build and deploy the app:
+yarn deploy
+2. This will automatically build the project and push the production build to the gh-pages branch, which GitHub Pages uses to serve the live demo.
+Contributing
+Contributions are welcome! Please submit a pull request or create an issue if you have any suggestions or bugs to report.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
