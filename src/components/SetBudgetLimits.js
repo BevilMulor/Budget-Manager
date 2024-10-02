@@ -17,7 +17,7 @@ export default function SetBudgetLimits({ setBudgetLimit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBudgetLimit(limits); // Pass the limits to the parent component
+    setBudgetLimit(limits); 
   };
 
   return (

@@ -6,16 +6,16 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function ExpenseSummary({ transactions, budgetLimits }) {
   if (!transactions || !budgetLimits) {
-    return <p>Loading expense summary...</p>; // Error handling for undefined props
+    return <p>Loading expense summary...</p>; 
   }
 
   const categories = ["Food", "Entertainment", "Utilities", "Others"];
 
   const categoryColors = {
-    Food: '#800080',          // Purple for Food
-    Entertainment: "#36A2EB", // Blue for Entertainment
-    Utilities: "#FFCE56",     // Yellow for Utilities
-    Others: "#4BC0C0",        // Green for Others
+    Food: '#800080',          
+    Entertainment: "#36A2EB", 
+    Utilities: "#FFCE56",    
+    Others: "#4BC0C0",       
   };
 
   const amountsByCategory = categories.map((category) =>
@@ -39,18 +39,18 @@ export default function ExpenseSummary({ transactions, budgetLimits }) {
 
           if (limit > 0) {
             if (spent >= limit) {
-              return "#FF0000"; // Red for exceeded
+              return "#FF0000"; 
             } else if (spent >= limit * 0.9) {
-              return "#FFA500"; // Orange for nearing limit
+              return "#FFA500"; 
             }
           }
-          return categoryColors[category]; // Default color based on category
+          return categoryColors[category]; 
         }),
       },
     ],
   };
 
-  // Function to get the alert message based on spending vs budget
+  //Get the alert message based on spending vs budget
   const getAlertMessage = (category, spent, limit) => {
     if (!limit || limit <= 0) return null;
   
@@ -60,7 +60,7 @@ export default function ExpenseSummary({ transactions, budgetLimits }) {
       return `Warning: You are nearing the budget limit for ${category}.`;
     }
   
-    return null; // No alert if under 90% of the budget
+    return null; 
   };
   
   return (

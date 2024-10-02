@@ -11,7 +11,7 @@ export default function AddTransactions({ id, addTransaction }) {
     const newTransaction = {
       id: id,
       text: text,
-      amount: amount < 0 ? amount : -Math.abs(amount), // Ensure negative amount for expenses
+      amount: Number(amount),  
       date: date,
       category: category,
     };
@@ -21,7 +21,6 @@ export default function AddTransactions({ id, addTransaction }) {
     setDate("");
     setCategory("");
   };
-  
 
   return (
     <div>

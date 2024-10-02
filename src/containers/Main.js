@@ -19,8 +19,20 @@ class Main extends Component {
         Others: 0,
       },
       alerts: {},
+      isFirstTransaction: true, // Track if it's the first transaction
     };
   }
+
+  handleAddTransaction = (transaction) => {
+    const { addTransaction } = this.props;
+    const { isFirstTransaction } = this.state;
+
+    if (isFirstTransaction) {
+      transaction.amount = Math.abs(transaction.amount); // First transaction as income (positive)
+      this.setState({ isFirstTransaction: false });
+    }
+    addTransaction(transaction); // Add the transaction
+  };
 
   setBudgetLimit = (limits) => {
     this.setState({ budgetLimits: limits }, this.checkForAlerts);
@@ -31,7 +43,6 @@ class Main extends Component {
     const { budgetLimits } = this.state;
     const alerts = {};
 
-    // Calculate total spent per category
     const spending = {
       Food: 0,
       Entertainment: 0,
@@ -47,7 +58,6 @@ class Main extends Component {
       }
     });
 
-    // Check if spending is nearing or exceeding limits
     Object.keys(budgetLimits).forEach((category) => {
       const limit = budgetLimits[category];
       const totalSpent = spending[category];
@@ -71,7 +81,7 @@ class Main extends Component {
   }
 
   render() {
-    const { transactions, addTransaction, deleteTransaction } = this.props;
+    const { transactions, deleteTransaction } = this.props;
     const { budgetLimits, alerts } = this.state;
 
     return (
@@ -83,7 +93,7 @@ class Main extends Component {
           deleteTransaction={deleteTransaction}
         />
         <AddTransactions
-          addTransaction={addTransaction}
+          addTransaction={this.handleAddTransaction} // Pass updated method
           id={transactions[0] ? transactions[0].id + 1 : 1}
         />
         <SetBudgetLimits setBudgetLimit={this.setBudgetLimit} />
@@ -97,6 +107,7 @@ class Main extends Component {
   }
 }
 
+// Move the mapStateToProps and mapDispatchToProps here
 const mapStateToProps = (state) => ({
   transactions: state.transactions,
 });
