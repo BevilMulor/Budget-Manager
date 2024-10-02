@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Personal-Budget-Manager/static/css/main.cda59e4e.css",
-    "main.js": "/Personal-Budget-Manager/static/js/main.66920e8a.js",
+    "main.css": "/Personal-Budget-Manager/static/css/main.9a0ab9fe.css",
+    "main.js": "/Personal-Budget-Manager/static/js/main.6139a4b8.js",
     "static/js/453.e4f83acf.chunk.js": "/Personal-Budget-Manager/static/js/453.e4f83acf.chunk.js",
     "index.html": "/Personal-Budget-Manager/index.html",
-    "main.cda59e4e.css.map": "/Personal-Budget-Manager/static/css/main.cda59e4e.css.map",
-    "main.66920e8a.js.map": "/Personal-Budget-Manager/static/js/main.66920e8a.js.map",
+    "main.9a0ab9fe.css.map": "/Personal-Budget-Manager/static/css/main.9a0ab9fe.css.map",
+    "main.6139a4b8.js.map": "/Personal-Budget-Manager/static/js/main.6139a4b8.js.map",
     "453.e4f83acf.chunk.js.map": "/Personal-Budget-Manager/static/js/453.e4f83acf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cda59e4e.css",
-    "static/js/main.66920e8a.js"
+    "static/css/main.9a0ab9fe.css",
+    "static/js/main.6139a4b8.js"
   ]
 }
