@@ -4,21 +4,28 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function ExpenseSummary({ transactions, budgetLimits, alerts }) {
+export default function ExpenseSummary({ transactions, budgetLimits }) {
+  if (!transactions || !budgetLimits) {
+    return <p>Loading expense summary...</p>; // Error handling for undefined props
+  }
+
   const categories = ["Food", "Entertainment", "Utilities", "Others"];
 
   const categoryColors = {
-    Food: "#FF6384",          // Red for Food
+    Food: '#800080',          // Purple for Food
     Entertainment: "#36A2EB", // Blue for Entertainment
     Utilities: "#FFCE56",     // Yellow for Utilities
     Others: "#4BC0C0",        // Green for Others
   };
 
   const amountsByCategory = categories.map((category) =>
-    transactions
-      .filter((t) => t.category === category)
-      .reduce((acc, curr) => acc + Number(curr.amount), 0)
+    Math.abs(
+      transactions
+        .filter((t) => t.category === category)
+        .reduce((acc, curr) => acc + Number(curr.amount), 0)
+    )
   );
+  
 
   const data = {
     labels: categories,
@@ -43,21 +50,44 @@ export default function ExpenseSummary({ transactions, budgetLimits, alerts }) {
     ],
   };
 
+  // Function to get the alert message based on spending vs budget
+  const getAlertMessage = (category, spent, limit) => {
+    if (!limit || limit <= 0) return null;
+  
+    if (spent > limit) {
+      return `You have exceeded the budget for ${category}.`;
+    } else if (spent >= limit * 0.9) {
+      return `Warning: You are nearing the budget limit for ${category}.`;
+    }
+  
+    return null; // No alert if under 90% of the budget
+  };
+  
   return (
     <div>
       <h3>Expense Summary</h3>
-      <Pie data={data} />
-      {categories.map((category, idx) => (
-        <div key={category}>
-          <p>
-            <strong>{category}</strong>: ${amountsByCategory[idx]} / $
-            {budgetLimits[category] || "No Limit"}
-          </p>
-          {alerts[category] && (
-            <p style={{ color: "red" }}>{alerts[category]}</p>
-          )}
-        </div>
-      ))}
+      <div className="pie-chart-container">
+        <Pie data={data} />
+      </div>
+
+      {categories.map((category, idx) => {
+        const spent = amountsByCategory[idx];
+        const limit = budgetLimits[category];
+        const alertMessage = getAlertMessage(category, spent, limit);
+
+        return (
+          <div key={category}>
+            <p>
+              <strong>{category}</strong>: ${spent.toFixed(2)} / ${limit || "No Limit"}
+            </p>
+            {alertMessage && (
+              <p style={{ color: "red", fontWeight: "bold" }}>
+                {alertMessage}
+              </p>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
