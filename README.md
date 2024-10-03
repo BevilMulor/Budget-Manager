@@ -21,9 +21,13 @@ Check out the live demo here
 Technologies Used
 
 React: For building the user interface.
+
 Redux: For state management.
+
 Redux Persist: To persist the Redux store across sessions.
+
 Chart.js: For visualizing data.
+
 React Chart.js 2: Wrapper for Chart.js in React.
 
 Installation
